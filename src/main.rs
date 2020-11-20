@@ -11,9 +11,13 @@ use pawos::println;
 pub extern "C" fn _start() -> ! {
     println!("Hello World{}", "!");
 
+    pawos::init();
+    x86_64::instructions::interrupts::int3();
+
     #[cfg(test)]
     test_main();
 
+    println!("It did not crash!");
     loop {}
 }
 
