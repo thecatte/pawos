@@ -13,9 +13,6 @@ use alloc::{ boxed::Box, vec, vec::Vec, rc::Rc };
 
 entry_point!(kernel_main);
 
-// TODO
-// https://os.phil-opp.com/paging-implementation/#using-offsetpagetable
-
 fn kernel_main(boot_info: &'static BootInfo) -> ! {
     use pawos::memory;
     use pawos::allocator;
